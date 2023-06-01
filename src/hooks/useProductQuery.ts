@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { cache, useState } from "react";
 import { baseApiUrl } from "@/consts";
 
 export type Product = {
@@ -8,25 +8,18 @@ export type Product = {
   scent_profile: string[];
 };
 
-type ReturnType = {
-  product?: Product;
-  err: string;
-};
-
 const getProductEndpoint = "/product/";
 
-export function useProductQuery(productHandle: string): ReturnType {
-  const [product, setProduct] = useState<Product>();
-  const [err, setErr] = useState<string>("");
+async function fetchData(handle: string): Promise<Product> {
+  const response = await fetch(baseApiUrl + getProductEndpoint + handle);
+  const data = await response.json();
+  return data;
+}
 
-  const fetchBundles = async () => {
-    await fetch(baseApiUrl + getProductEndpoint + productHandle)
-      .then((res) => res.json())
-      .then((data: Product) => setProduct(data))
-      .catch(() => setErr("something went wrong"));
-  };
-
-  fetchBundles();
-
-  return { product, err };
+export async function fetchAllProducts(
+  totalProducts: string[]
+): Promise<Product[]> {
+  const promises = totalProducts.map((product) => fetchData(product));
+  const allProductsData = await Promise.all(promises);
+  return allProductsData;
 }
