@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useBundleQuery } from "@/hooks/useBundleQuery";
 import { useProductQuery } from "@/hooks/useProductQuery";
+import { Card } from "@/components/Card";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,13 +22,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        {bundles.map((bundle) => (
-          <div key={bundle.handle} className={"App-item"}>
-            <div>
-              <img src={bundle.imageSrc} alt={bundle.title} />
-            </div>
-            <div className={"Price-item"}>price ${bundle.price}</div>
-          </div>
+        {bundles.map((bundle, i) => (
+          <Card bundle={bundle} key={i} />
         ))}
 
         {product && product.price}
