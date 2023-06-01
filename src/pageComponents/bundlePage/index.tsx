@@ -19,8 +19,7 @@ export default function BundlePage({ bundles, products }: BundlePageProps) {
   useEffect(() => {
     getAllProducts();
   }, []);
-  // const [products, setProducts] = useState<Product[]>([] as Product[]);
-  // }
+
   return (
     <div className={css.container}>
       <h1 className={css.header}>
@@ -32,7 +31,6 @@ export default function BundlePage({ bundles, products }: BundlePageProps) {
           <Card bundle={bundle} allProducts={allProducts} key={i} />
         ))}
       </div>
-      {/* {product && product.price} */}
     </div>
   );
 }
