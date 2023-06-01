@@ -4,7 +4,6 @@ import { BundlePageProps } from "@/pages";
 import { Product, fetchAllProducts } from "@/hooks/useProductQuery";
 import { useEffect, useState } from "react";
 
-
 export default function BundlePage({ bundles, products }: BundlePageProps) {
   const [allProducts, setAllProducts] = useState<Product[]>([] as Product[]);
   const [allScents, setAllScents] = useState<string[]>([] as string[]);
@@ -62,7 +61,6 @@ export default function BundlePage({ bundles, products }: BundlePageProps) {
             {scent}
           </>
         ))}
-        {/* <input type="radio" value="Male" name="gender" /> Male */}
       </div>
 
       <div className={css.cardContainer}>

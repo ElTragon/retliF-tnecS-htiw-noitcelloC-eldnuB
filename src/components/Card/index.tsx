@@ -6,8 +6,6 @@ import { Product } from "@/hooks/useProductQuery";
 import { Chip } from "../Chip";
 import cx from "classnames";
 
-// import { useProductQuery } from "@/hooks/useProductQuery";
-
 type Props = {
   bundle: BundleType;
   allProducts: Product[];
@@ -34,10 +32,6 @@ function getScents(
 
 export function Card({ bundle, allProducts, filterScents }: Props) {
   const scents = getScents(bundle.products_included, allProducts);
-
-  // if (!filterScents.some((scent) => scents.includes(scent))) {
-  //   return <div />;
-  // }
 
   return (
     <div
