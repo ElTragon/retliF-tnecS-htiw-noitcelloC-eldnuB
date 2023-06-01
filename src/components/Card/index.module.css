@@ -24,3 +24,7 @@
 .includedList {
   @apply text-gray-500;
 }
+
+.hide{
+  @apply hidden;
+}

@@ -4,11 +4,12 @@ import { Price } from "../Price";
 import formatList from "@/utils/formatList";
 import { Product } from "@/hooks/useProductQuery";
 import { Chip } from "../Chip";
-// import { useProductQuery } from "@/hooks/useProductQuery";
+import cx from "classnames";
 
 type Props = {
   bundle: BundleType;
   allProducts: Product[];
+  filterScents: string[];
 };
 
 function getScents(
@@ -29,11 +30,15 @@ function getScents(
   return Array.from(new Set(result));
 }
 
-export function Card({ bundle, allProducts }: Props) {
+export function Card({ bundle, allProducts, filterScents }: Props) {
   const scents = getScents(bundle.products_included, allProducts);
 
   return (
-    <div className={css.container}>
+    <div
+      className={cx(css.container, {
+        [css.hide]: !filterScents.some((scent) => scents.includes(scent)),
+      })}
+    >
       <div className={css.imageContainer}>
         <img src={bundle.imageSrc} alt={bundle.title} />
       </div>
