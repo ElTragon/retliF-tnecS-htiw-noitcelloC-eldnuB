@@ -10,6 +10,10 @@
   @apply font-bold text-black text-xl;
 }
 
+.chipContainer {
+  @apply flex flex-row flex-wrap gap-1;
+}
+
 .includedContainer {
   @apply mt-1;
 }
