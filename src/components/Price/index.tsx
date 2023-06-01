@@ -1,10 +1,10 @@
-import { BundleType } from "@/hooks/useBundleQuery";
+import css from "./index.module.css";
 
 type Props = {
-  price: string;
+  price: number;
   products_included: string[];
 };
 
 export function Price({ price }: Props) {
-  return <h3 className="container">{price}</h3>;
+  return <h3 className={css.price}>${price / 100}</h3>;
 }
