@@ -6,6 +6,11 @@
     @apply text-xl font-extrabold text-black;
 }
 
+.filterContainer{
+    @apply max-w-[60rem] flex flex-row flex-wrap gap-6 mt-3;
+}
+
 .cardContainer{
     @apply max-w-[60rem] flex flex-row flex-wrap gap-6 mt-3;
 }
+
