@@ -1,5 +1,5 @@
 .chip {
-    @apply rounded-full px-2 py-1 uppercase text-sm bg-woodsy;
+    @apply rounded-full px-2 py-1 uppercase text-sm bg-woodsy text-white;
 }
 
 .woodsy {

@@ -11,6 +11,6 @@
 }
 
 .cardContainer{
-    @apply max-w-[60rem] flex flex-row flex-wrap gap-6 mt-3;
+    @apply max-w-[60rem] flex flex-row flex-wrap justify-center gap-6 mt-3;
 }
 

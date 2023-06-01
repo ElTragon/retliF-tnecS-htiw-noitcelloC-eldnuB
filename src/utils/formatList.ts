@@ -1,14 +1,21 @@
-export default function formatList(arr: string[]): string {
-  if (arr.length === 0) {
-    return "";
+export default function formatList(products: string[]): string {
+  const productCountMap: { [key: string]: number } = {};
+  const formattedProducts: string[] = [];
+
+  products.forEach((product) => {
+    productCountMap[product] = (productCountMap[product] || 0) + 1;
+  });
+
+  for (const product in productCountMap) {
+    formattedProducts.push(
+      productCountMap[product] > 1
+        ? `${product} x ${productCountMap[product]}`
+        : product
+    );
   }
 
-  if (arr.length === 1) {
-    return arr[0];
-  }
-
-  const lastValue: string = arr[arr.length - 1];
-  const otherValues: string = arr.slice(0, arr.length - 1).join(", ");
-
-  return `${otherValues}, and ${lastValue}`;
+  const lastProduct = formattedProducts.pop() || "";
+  return formattedProducts.length > 0
+    ? `${formattedProducts.join(", ")}, and ${lastProduct}`
+    : lastProduct;
 }
