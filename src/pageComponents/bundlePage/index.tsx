@@ -1,9 +1,10 @@
 import { Card } from "@/components/Card";
 import css from "./index.module.css";
 import { BundlePageProps } from "@/pages";
-import { Product, fetchAllProducts } from "@/hooks/useProductQuery";
+import { fetchAllProducts } from "@/hooks/useFetchProducts";
 import { useEffect, useState } from "react";
 import Spinner from "@/utils/Spinner";
+import { Product } from "@/types";
 
 export default function BundlePage({ bundles, products }: BundlePageProps) {
   const [isLoading, setIsLoading] = useState<boolean>(true);

@@ -1,4 +1,4 @@
-import { Product } from "@/hooks/useProductQuery";
+import { Product } from "@/types";
 import css from "./index.module.css";
 
 type Props = {

@@ -1,9 +1,8 @@
 import Page from "@/utils/Page";
 import BundlePage from "@/pageComponents/bundlePage";
-import { BundleType } from "@/hooks/useBundleQuery";
-import { Product } from "@/hooks/useProductQuery";
 import { baseApiUrl } from "@/consts";
 import { GetServerSideProps } from "next";
+import { BundleType } from "@/types";
 
 export type BundlePageProps = {
   bundles: BundleType[];

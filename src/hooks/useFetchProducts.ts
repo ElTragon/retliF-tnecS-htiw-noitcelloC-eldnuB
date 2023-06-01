@@ -1,12 +1,6 @@
 import { cache, useState } from "react";
 import { baseApiUrl } from "@/consts";
-
-export type Product = {
-  handle: string;
-  title: string;
-  price: number;
-  scent_profile: string[];
-};
+import { Product } from "@/types";
 
 const getProductEndpoint = "/product/";
 
