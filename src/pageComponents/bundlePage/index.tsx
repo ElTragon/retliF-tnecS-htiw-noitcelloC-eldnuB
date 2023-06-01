@@ -42,12 +42,15 @@ export default function BundlePage({ bundles, products }: BundlePageProps) {
   return (
     <div className={css.container}>
       <h1 className={css.header}>
-        Feel like you just chopped down a tree with your bare hands every time
-        you step out of the shower.
+        {filterScents.length !== 0 &&
+          "Feel like you just chopped down a tree with your bare hands every time you step out of the shower."}
+
+        {filterScents.length === 0 &&
+          "Oh, dear explorer of the soap realm, it appears that your adventurous selection of filters has led you to a pristine realm of absolute emptiness. Alas! The woods of Dr. Squatch hold no treasure that matches your criteria. Fear not, for the journey for the perfect soap continues, and our sudsy wonders await your return. Keep exploring, and together we shall conquer the realm of cleanliness!"}
       </h1>
 
       <div className={css.cardContainer}>
-        {allScents.map((scent, i) => (
+        {allScents.map((scent) => (
           <>
             <input
               type="checkbox"
