@@ -18,7 +18,6 @@ function getScents(
   let result = [] as string[];
 
   products_included.forEach((product_included) => {
-    // const { product } = useProductQuery(product_included);
     let foundProduct = allProducts.find(
       (product) => product.handle == product_included
     );

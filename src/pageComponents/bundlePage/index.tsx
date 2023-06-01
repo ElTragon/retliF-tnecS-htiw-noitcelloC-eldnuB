@@ -1,12 +1,8 @@
-import { Inter } from "next/font/google";
-// import { useBundleQuery } from "@/hooks/useBundleQuery";
-// import { useProductQuery } from "@/hooks/useProductQuery";
 import { Card } from "@/components/Card";
 import css from "./index.module.css";
 import { BundlePageProps } from "@/pages";
 import { Product, fetchAllProducts } from "@/hooks/useProductQuery";
 import { useEffect, useState } from "react";
-// import { fetchAllProducts } from "@/hooks/useProductQuery";
 
 export default function BundlePage({ bundles, products }: BundlePageProps) {
   const [allProducts, setAllProducts] = useState<Product[]>([] as Product[]);
