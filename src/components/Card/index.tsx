@@ -3,6 +3,7 @@ import css from "./index.module.css";
 import { Price } from "../Price";
 import formatList from "@/utils/formatList";
 import { Product } from "@/hooks/useProductQuery";
+import { Chip } from "../Chip";
 // import { useProductQuery } from "@/hooks/useProductQuery";
 
 type Props = {
@@ -44,7 +45,7 @@ export function Card({ bundle, allProducts }: Props) {
 
       <div className={css.chipContainer}>
         {scents.map((scent, i) => (
-          <div key={i}>{scent}</div>
+          <Chip key={i} scent={scent} />
         ))}
       </div>
 

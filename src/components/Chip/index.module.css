@@ -1,0 +1,23 @@
+.chip {
+    @apply rounded-full px-2 py-1 uppercase text-sm;
+}
+
+.woodsy {
+    @apply bg-woodsy;
+}
+.citrus {
+    @apply bg-citrus;
+}
+.fresh {
+    @apply bg-fresh;
+}
+.herbal {
+    @apply bg-herbal;
+}
+.rich {
+    @apply bg-rich;
+}
+.spiced {
+    @apply bg-spiced;
+}
+

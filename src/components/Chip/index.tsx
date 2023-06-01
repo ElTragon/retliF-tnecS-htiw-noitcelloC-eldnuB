@@ -1,10 +1,10 @@
 import css from "./index.module.css";
+import cx from "classnames";
 
 type Props = {
-  price: number;
-  products_included: string[];
+  scent: string;
 };
 
-export function Chip({ price }: Props) {
-  return <h3 className={css.price}>${price / 100}</h3>;
+export function Chip({ scent }: Props) {
+  return <h3 className={cx(css.chip, css[scent])}>{scent}</h3>;
 }
