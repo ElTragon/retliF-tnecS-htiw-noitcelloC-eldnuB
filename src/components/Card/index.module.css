@@ -1,5 +1,5 @@
 .container {
-  @apply border-[1px] border-gray-600 hover:shadow-md w-[22.125rem] h-[35rem] rounded-md px-4 flex flex-col;
+  @apply border-[1px] border-gray-600 hover:shadow-md w-[22.125rem] h-[37rem] rounded-md px-4 flex flex-col;
 }
 
 .imageContainer {
@@ -11,11 +11,11 @@
 }
 
 .chipContainer {
-  @apply flex flex-row flex-wrap gap-1;
+  @apply flex flex-row flex-wrap gap-1 mt-2;
 }
 
 .includedContainer {
-  @apply mt-1;
+  @apply mt-2;
 }
 .includedTitle {
   @apply font-medium text-lg text-gray-600;

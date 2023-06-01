@@ -1,3 +1,5 @@
 .price{
-    @apply text-green-800 text-xl font-bold line-through decoration-2 ;
+    @apply text-green-800 text-xl font-bold  ;
 }
+
+/* line-through decoration-2 for latter */
