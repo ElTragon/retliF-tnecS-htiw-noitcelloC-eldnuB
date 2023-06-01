@@ -1,0 +1,22 @@
+.container {
+  @apply border-[1px] border-gray-600 hover:shadow-md w-[22.125rem] h-[35rem] rounded-md px-4 flex flex-col;
+}
+
+.imageContainer {
+  @apply w-80 h-80 mt-4;
+}
+
+.title {
+  @apply font-bold text-black text-xl;
+}
+
+.includedContainer {
+  @apply mt-1;
+}
+.includedTitle {
+  @apply font-medium text-lg text-gray-600;
+}
+
+.includedList {
+  @apply text-gray-500;
+}

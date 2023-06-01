@@ -1,0 +1,11 @@
+.container{
+    @apply py-9 px-12 flex flex-col items-center;
+}
+
+.header {
+    @apply text-xl font-extrabold text-black;
+}
+
+.cardContainer{
+    @apply max-w-[60rem] flex flex-row flex-wrap gap-6 mt-3;
+}
