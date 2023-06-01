@@ -45,7 +45,7 @@ export function Card({ bundle, allProducts, filterScents }: Props) {
 
       <h2 className={css.title}>{bundle.title}</h2>
 
-      <Price {...bundle} />
+      <Price {...bundle} allProducts={allProducts} />
 
       <div className={css.chipContainer}>
         {scents.map((scent, i) => (

@@ -1,5 +1,16 @@
 .price{
-    @apply text-green-800 text-xl font-bold  ;
+    @apply text-green-800 text-xl font-bold flex flex-row flex-nowrap items-center;
 }
 
-/* line-through decoration-2 for latter */
+.totalPrice{
+    @apply text-gray-400 text-xl font-bold line-through decoration-2 mr-1  ;
+
+}
+
+.sale{
+    @apply text-white text-xl font-bold py-0.5 pl-2 pr-4 ml-1 bg-rose-800 relative w-[7.25rem];
+}
+
+.whiteSquare{
+    @apply w-[27px] h-[27px] bg-slate-100 rotate-45 absolute top-[3px] left-[102px];
+}

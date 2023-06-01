@@ -3,8 +3,10 @@ import css from "./index.module.css";
 import { BundlePageProps } from "@/pages";
 import { Product, fetchAllProducts } from "@/hooks/useProductQuery";
 import { useEffect, useState } from "react";
+import Spinner from "@/utils/Spinner";
 
 export default function BundlePage({ bundles, products }: BundlePageProps) {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [allProducts, setAllProducts] = useState<Product[]>([] as Product[]);
   const [allScents, setAllScents] = useState<string[]>([] as string[]);
   const [filterScents, setFilterScents] = useState<string[]>([] as string[]);
@@ -20,6 +22,7 @@ export default function BundlePage({ bundles, products }: BundlePageProps) {
     });
     setAllScents(Array.from(new Set(scents)));
     setFilterScents(Array.from(new Set(scents)));
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -38,6 +41,10 @@ export default function BundlePage({ bundles, products }: BundlePageProps) {
     }
     setFilterScents(newFilterScents);
   };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className={css.container}>
