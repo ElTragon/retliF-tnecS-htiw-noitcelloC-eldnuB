@@ -1,10 +1,9 @@
-import { BundleType } from "@/hooks/useBundleQuery";
 import css from "./index.module.css";
 import { Price } from "../Price";
 import formatList from "@/utils/formatList";
-import { Product } from "@/hooks/useProductQuery";
 import { Chip } from "../Chip";
 import cx from "classnames";
+import { BundleType, Product } from "@/types";
 
 type Props = {
   bundle: BundleType;
