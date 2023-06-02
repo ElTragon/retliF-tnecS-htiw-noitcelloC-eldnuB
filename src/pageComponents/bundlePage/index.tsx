@@ -57,10 +57,11 @@ export default function BundlePage({ bundles, products }: BundlePageProps) {
           "Oh, dear explorer of the soap realm, it appears that your adventurous selection of filters has led you to a pristine realm of absolute emptiness. Alas! The woods of Dr. Squatch hold no treasure that matches your criteria. Fear not, for the journey for the perfect soap continues, and our sudsy wonders await your return. Keep exploring, and together we shall conquer the realm of cleanliness!"}
       </h1>
 
-      <div className={css.cardContainer}>
-        {allScents.map((scent) => (
-          <>
+      <div className={css.flexContainer}>
+        {allScents.map((scent, i) => (
+          <div className={css.checkboxContainer} key={i}>
             <input
+              className={css.checkbox}
               type="checkbox"
               checked={
                 filterScents.find((filterScent) => filterScent === scent) !==
@@ -70,11 +71,11 @@ export default function BundlePage({ bundles, products }: BundlePageProps) {
               onClick={() => onClick(scent)}
             />
             {scent}
-          </>
+          </div>
         ))}
       </div>
 
-      <div className={css.cardContainer}>
+      <div className={css.flexContainer}>
         {bundles.map((bundle, i) => (
           <Card
             bundle={bundle}
